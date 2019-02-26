@@ -1,4 +1,5 @@
 ﻿using System;
+using DellChallenge.C.Extensions;
 
 namespace DellChallenge.C
 {
@@ -10,30 +11,23 @@ namespace DellChallenge.C
             //      1. clean coding
             //      2. naming standards
             //      3. code reusability, hence maintainability
-            StartHere();
+
+            int number1 = 1; //Convert.ToInt32(Console.ReadLine());
+            int number2 = 3; //Convert.ToInt32(Console.ReadLine());
+            int number3 = 5; //Convert.ToInt32(Console.ReadLine());
+
+            ShowSum(number1, number2);
+            ShowSum(number1, number2, number3);
+
             Console.ReadKey();
         }
 
-        private static void StartHere()
+        //
+
+        private static void ShowSum(int number1, int number2, int number3 = 0)
         {
-            myObject _MyNewObject = new myObject();
-            int obj1 = _MyNewObject.Do(1, 3);
-            int num2 = _MyNewObject.DoExtended(1, 3, 5);
-            Console.WriteLine(obj1);
-            Console.WriteLine(num2);
-        }
-    }
-
-    class myObject
-    {
-
-        public int Do(int a, int b)
-        {
-            return a + b;
-        }
-
-        public int DoExtended(int a, int b, int c)
-        { return a + b + c;
+            int sum = MyMath.Sum(number1, number2, number3);
+            Console.WriteLine(sum);
         }
     }
 }

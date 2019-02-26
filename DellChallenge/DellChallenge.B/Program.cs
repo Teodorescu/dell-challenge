@@ -1,4 +1,5 @@
 ﻿using System;
+using DellChallenge.B.Models;
 
 namespace DellChallenge.B
 {
@@ -8,55 +9,25 @@ namespace DellChallenge.B
         {
             // Given the classes and interface below, please constructor the proper hierarchy.
             // Feel free to refactor and restructure the classes/interface below.
-            // (Hint: Not all species and Fly and/or Swim)
+            // (Hint: Not all species can Fly and/or Swim)
+
+            var human = new Human();
+            human.Show();
+            human.GetSpecies();
+            human.CheckSpecies(Console.ReadLine());
+
+            var bird = new Bird();
+            bird.Show();
+            bird.GetSpecies();
+            bird.CheckSpecies(Console.ReadLine());
+
+            var fish = new Fish();
+            fish.Show();
+            fish.GetSpecies();
+            fish.CheckSpecies(Console.ReadLine());
+
+            Console.ReadLine();            
         }
-    }
-
-    public interface ISpecies
-    {
-        void Eat();
-        void Drink();
-        void Fly();
-        void Swim();
-    }
-
-    public class Species
-    {
-        public virtual void GetSpecies()
-        {
-            Console.WriteLine($"Echo who am I?");
-        }
-    }
-
-    public class Human : ISpecies
-    {
-        public void Drink()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eat()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Fly()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Swim()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class Bird
-    {
-    }
-
-    public class Fish
-    {
     }
 }
 
